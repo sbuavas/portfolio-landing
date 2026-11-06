@@ -72,6 +72,49 @@
       </div>
     </section>
 
+    <section id="contato" class="secao">
+      <div class="container">
+        <h2>Contato</h2>
+        <p>Manda uma mensagem. Se informar o CEP, eu já sei de onde você fala.</p>
+
+        <form id="form-contato" class="formulario" novalidate>
+          <div class="campo">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" required>
+          </div>
+
+          <div class="campo">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+
+          <div class="linha">
+            <div class="campo campo-cep">
+              <label for="cep">CEP</label>
+              <input type="text" id="cep" name="cep" maxlength="9" placeholder="00000-000" inputmode="numeric">
+              <small id="cep-status" class="ajuda"></small>
+            </div>
+            <div class="campo">
+              <label for="cidade">Cidade</label>
+              <input type="text" id="cidade" name="cidade" readonly>
+            </div>
+            <div class="campo campo-uf">
+              <label for="uf">UF</label>
+              <input type="text" id="uf" name="uf" readonly>
+            </div>
+          </div>
+
+          <div class="campo">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primario">Enviar</button>
+        </form>
+
+        <div id="agradecimento" class="agradecimento escondido"></div>
+      </div>
+    </section>
   </main>
 
   <footer class="rodape">
@@ -84,5 +127,6 @@
     </div>
   </footer>
 
+  <script src="js/script.js"></script>
 </body>
 </html>
