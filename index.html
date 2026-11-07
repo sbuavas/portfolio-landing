@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Santiago Buavas | Desenvolvedor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="topo">
+    <div class="container topo-conteudo">
+      <a href="#" class="logo">Santiago Buavas</a>
+      <nav class="menu">
+        <a href="#sobre">Sobre</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <p class="hero-tag">Canoas, RS</p>
+        <h1>Desenvolvedor de software em formação full stack</h1>
+        <p class="slogan">Gosto de pegar um processo chato e transformar em algo que roda sozinho.</p>
+        <div class="hero-botoes">
+          <button id="btn-contato" class="btn btn-primario">Fale comigo</button>
+          <a href="#projetos" class="btn btn-secundario">Ver projetos</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre" class="secao">
+      <div class="container">
+        <h2>Sobre</h2>
+        <p>
+          Trabalho com desenvolvimento de software e estou na formação Desenvolvedor Full Stack Jr.
+          da +praTI com a Codifica. No dia a dia mexo bastante com Python, JavaScript e banco de dados,
+          e nos estudos venho reforçando a base de Java, HTML, CSS e lógica.
+        </p>
+        <p>
+          O que mais me interessa é automação: integrar sistemas, consumir APIs e tirar trabalho
+          repetitivo da frente das pessoas.
+        </p>
+      </div>
+    </section>
+
+    <section id="projetos" class="secao secao-alt">
+      <div class="container">
+        <h2>Projetos</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>Sistema de biblioteca</h3>
+            <p>Java com classes abstratas, herança e polimorfismo, mais modelagem e consultas no PostgreSQL.</p>
+            <a href="https://github.com/sbuavas/biblioteca-java-bd" target="_blank" rel="noopener">Ver no GitHub</a>
+          </article>
+          <article class="card">
+            <h3>Gerenciador de lojas</h3>
+            <p>Gerenciador de lojas de um shopping em Java: estoque, validade de produtos e regras de negócio.</p>
+            <a href="https://github.com/sbuavas/store-manager" target="_blank" rel="noopener">Ver no GitHub</a>
+          </article>
+          <article class="card">
+            <h3>Esta página</h3>
+            <p>Landing page em HTML, CSS e JavaScript puro, com formulário de contato e busca de endereço pela ViaCEP.</p>
+            <a href="https://github.com/sbuavas/portfolio-landing" target="_blank" rel="noopener">Ver no GitHub</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="secao">
+      <div class="container">
+        <h2>Contato</h2>
+        <p>Manda uma mensagem. Se informar o CEP, eu já sei de onde você fala.</p>
+
+        <form id="form-contato" class="formulario" novalidate>
+          <div class="campo">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" required>
+          </div>
+
+          <div class="campo">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+
+          <div class="linha">
+            <div class="campo campo-cep">
+              <label for="cep">CEP</label>
+              <input type="text" id="cep" name="cep" maxlength="9" placeholder="00000-000" inputmode="numeric">
+              <small id="cep-status" class="ajuda"></small>
+            </div>
+            <div class="campo">
+              <label for="cidade">Cidade</label>
+              <input type="text" id="cidade" name="cidade" readonly>
+            </div>
+            <div class="campo campo-uf">
+              <label for="uf">UF</label>
+              <input type="text" id="uf" name="uf" readonly>
+            </div>
+          </div>
+
+          <div class="campo">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primario">Enviar</button>
+        </form>
+
+        <div id="agradecimento" class="agradecimento escondido"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container">
+      <p>Santiago Buavas</p>
+      <p>
+        <a href="https://github.com/sbuavas" target="_blank" rel="noopener">GitHub</a> ·
+        <a href="https://www.linkedin.com/in/santiago-buavas" target="_blank" rel="noopener">LinkedIn</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
