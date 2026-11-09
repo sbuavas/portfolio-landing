@@ -3,127 +3,392 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Santiago Buavas | Desenvolvedor</title>
+  <title>Santiago Buavas — Desenvolvedor de Software</title>
+  <meta name="description" content="Desenvolvedor de software em Canoas, RS. Portfólio com projetos em Java, SQL, HTML, CSS e JavaScript.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script>
+    // aplica o tema salvo antes de pintar a página, para não piscar
+    try { var t = localStorage.getItem('tema'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
 </head>
 <body>
 
-  <header class="topo">
-    <div class="container topo-conteudo">
-      <a href="#" class="logo">Santiago Buavas</a>
-      <nav class="menu">
-        <a href="#sobre">Sobre</a>
-        <a href="#projetos">Projetos</a>
-        <a href="#contato">Contato</a>
+  <header class="topo" id="topo">
+    <div class="wrap topo-inner">
+      <a href="#inicio" class="logo">santiago.</a>
+      <nav class="menu" aria-label="Navegação principal">
+        <a href="#inicio" class="menu-link ativo">Início</a>
+        <a href="#projetos" class="menu-link">Projetos</a>
+        <a href="#stack" class="menu-link">Stack</a>
+        <a href="#experiencia" class="menu-link">Experiência</a>
+        <a href="#contato" class="menu-link">Contato</a>
       </nav>
+      <div class="topo-acoes">
+        <button id="btn-tema" class="btn-icone" aria-label="Alternar tema">
+          <svg class="icone-sol" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <svg class="icone-lua" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        </button>
+        <button id="btn-menu" class="btn-icone so-mobile" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-mobile">
+          <svg class="icone-hamb" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <svg class="icone-x" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
     </div>
   </header>
 
+  <div id="menu-mobile" class="menu-mobile" aria-hidden="true">
+    <nav aria-label="Navegação mobile">
+      <a href="#inicio">Início</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#stack">Stack</a>
+      <a href="#experiencia">Experiência</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <div class="menu-mobile-sociais">
+      <a href="https://github.com/sbuavas" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/santiago-buavas/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:santiagogbuavas@gmail.com">E-mail</a>
+    </div>
+  </div>
+
   <main>
-    <section class="hero">
-      <div class="container">
-        <p class="hero-tag">Canoas, RS</p>
-        <h1>Desenvolvedor de software em formação full stack</h1>
-        <p class="slogan">Gosto de pegar um processo chato e transformar em algo que roda sozinho.</p>
-        <div class="hero-botoes">
-          <button id="btn-contato" class="btn btn-primario">Fale comigo</button>
-          <a href="#projetos" class="btn btn-secundario">Ver projetos</a>
+
+    <!-- HERO -->
+    <section id="inicio" class="hero grade">
+      <div class="hero-fade" aria-hidden="true"></div>
+      <div class="wrap hero-grid">
+        <div class="hero-texto">
+          <div class="revelar"><span class="pill"><span class="ponto-verde" aria-hidden="true"></span>Aberto a novas oportunidades</span></div>
+          <h1 class="revelar">Santiago<br><span class="gradiente">Buavas.</span></h1>
+          <p class="hero-cargo revelar"><span>Desenvolvedor</span> <span>de Software</span></p>
+          <p class="hero-local mono revelar">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            Canoas, RS · Brasil
+          </p>
+          <p class="hero-desc revelar">Construo aplicações web e automações que tiram trabalho repetitivo da frente das pessoas. Foco em código simples, integração entre sistemas e entrega que funciona.</p>
+          <div class="hero-botoes revelar">
+            <a href="#projetos" class="btn btn-primario">Ver projetos
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+            </a>
+            <button id="btn-contato" class="btn btn-contorno" type="button">Fale comigo
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg>
+            </button>
+          </div>
+          <div class="hero-sociais revelar">
+            <a href="https://github.com/sbuavas" target="_blank" rel="noopener" aria-label="GitHub"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg></a>
+            <a href="https://www.linkedin.com/in/santiago-buavas/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a href="mailto:santiagogbuavas@gmail.com" aria-label="E-mail"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg></a>
+          </div>
+        </div>
+
+        <div class="hero-foto-col revelar">
+          <div class="hero-foto-wrap">
+            <div class="hero-foto-glow" aria-hidden="true"></div>
+            <div class="hero-foto">
+              <img src="img/foto.jpg" alt="Santiago Buavas">
+            </div>
+            <div class="hero-badge">
+              <span class="hero-badge-num">2026</span>
+              <span class="hero-badge-txt mono">full<br>stack jr.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="#numeros" class="scroll-dica mono" aria-label="Rolar para baixo">SCROLL
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </a>
+    </section>
+
+    <!-- NÚMEROS -->
+    <div id="numeros" class="numeros">
+      <div class="wrap numeros-grid">
+        <div class="numero revelar">
+          <span class="numero-valor">3+</span>
+          <span class="numero-titulo">Projetos públicos</span>
+          <span class="numero-sub mono">Java, SQL, HTML, CSS e JavaScript</span>
+        </div>
+        <div class="numero revelar">
+          <span class="numero-valor">2026</span>
+          <span class="numero-titulo">Formação Full Stack Jr.</span>
+          <span class="numero-sub mono">+praTI · Codifica Edu</span>
+        </div>
+        <div class="numero revelar">
+          <span class="numero-valor">RS</span>
+          <span class="numero-titulo">Canoas, Rio Grande do Sul</span>
+          <span class="numero-sub mono">Presencial ou remoto</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SOBRE -->
+    <section id="sobre" class="secao borda-topo">
+      <div class="wrap">
+        <div class="secao-cabecalho revelar">
+          <span class="rotulo mono">// Sobre</span>
+          <h2>Quem sou</h2>
+        </div>
+        <div class="sobre-grid">
+          <div class="sobre-texto revelar">
+            <p>Trabalho com desenvolvimento de software e estou na formação Desenvolvedor Full Stack Jr. da +praTI com a Codifica Edu. No dia a dia mexo com Python, JavaScript e banco de dados, e nos estudos venho reforçando a base de Java, HTML, CSS e lógica.</p>
+            <p>O que mais me interessa é automação: integrar sistemas, consumir APIs e transformar um processo manual em algo que roda sozinho.</p>
+            <p>Gosto de entender o problema antes de escrever código. Tecnologia é o meio; o que importa é resolver a dor de quem vai usar.</p>
+          </div>
+          <dl class="sobre-dados revelar">
+            <div><dt class="mono">Função</dt><dd>Desenvolvedor de Software</dd></div>
+            <div><dt class="mono">Formação</dt><dd>Full Stack Jr. · +praTI / Codifica Edu</dd></div>
+            <div><dt class="mono">Faculdade</dt><dd>Unisinos · Universidade do Vale do Rio dos Sinos</dd></div>
+            <div><dt class="mono">Local</dt><dd>Canoas, RS · Brasil</dd></div>
+          </dl>
         </div>
       </div>
     </section>
 
-    <section id="sobre" class="secao">
-      <div class="container">
-        <h2>Sobre</h2>
-        <p>
-          Trabalho com desenvolvimento de software e estou na formação Desenvolvedor Full Stack Jr.
-          da +praTI com a Codifica. No dia a dia mexo bastante com Python, JavaScript e banco de dados,
-          e nos estudos venho reforçando a base de Java, HTML, CSS e lógica.
-        </p>
-        <p>
-          O que mais me interessa é automação: integrar sistemas, consumir APIs e tirar trabalho
-          repetitivo da frente das pessoas.
-        </p>
+    <!-- MARQUEE -->
+    <section class="marquee-secao" aria-label="Tecnologias">
+      <div class="marquee">
+        <div class="marquee-sombra esq" aria-hidden="true"></div>
+        <div class="marquee-sombra dir" aria-hidden="true"></div>
+        <div class="marquee-linha">
+          <div class="marquee-trilha" id="marquee-1"></div>
+        </div>
+        <div class="marquee-linha">
+          <div class="marquee-trilha reverso" id="marquee-2"></div>
+        </div>
       </div>
     </section>
 
-    <section id="projetos" class="secao secao-alt">
-      <div class="container">
-        <h2>Projetos</h2>
-        <div class="cards">
-          <article class="card">
-            <h3>Sistema de biblioteca</h3>
-            <p>Java com classes abstratas, herança e polimorfismo, mais modelagem e consultas no PostgreSQL.</p>
-            <a href="https://github.com/sbuavas/biblioteca-java-bd" target="_blank" rel="noopener">Ver no GitHub</a>
+    <!-- PROJETOS -->
+    <section id="projetos" class="secao">
+      <div class="wrap">
+        <div class="secao-cabecalho revelar">
+          <span class="rotulo mono">// Trabalhos</span>
+          <h2>Projetos</h2>
+          <p class="secao-desc">Projetos que mostram o que venho estudando e construindo: orientação a objetos, banco de dados e front-end.</p>
+        </div>
+        <div class="projetos-grid">
+          <article class="card-projeto revelar">
+            <div class="card-capa capa-1" aria-hidden="true">
+              <span class="capa-codigo mono">class Biblioteca {<br>&nbsp;&nbsp;emprestar()<br>&nbsp;&nbsp;devolver()<br>}</span>
+              <span class="card-num mono">01</span>
+              <span class="card-ano mono">2026</span>
+            </div>
+            <div class="card-corpo">
+              <h3>Sistema de Biblioteca</h3>
+              <p>Sistema de empréstimos em Java com classes abstratas, herança e polimorfismo, mais modelagem e consultas no PostgreSQL.</p>
+              <div class="tags">
+                <span class="tag mono">Java</span><span class="tag mono">POO</span><span class="tag mono">PostgreSQL</span><span class="tag mono">SQL</span>
+              </div>
+              <div class="card-rodape">
+                <a href="https://github.com/sbuavas/biblioteca-java-bd" target="_blank" rel="noopener" class="card-link">Ver projeto
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="https://github.com/sbuavas/biblioteca-java-bd" target="_blank" rel="noopener" class="card-icone" aria-label="Repositório no GitHub"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg></a>
+              </div>
+            </div>
           </article>
-          <article class="card">
-            <h3>Gerenciador de lojas</h3>
-            <p>Gerenciador de lojas de um shopping em Java: estoque, validade de produtos e regras de negócio.</p>
-            <a href="https://github.com/sbuavas/store-manager" target="_blank" rel="noopener">Ver no GitHub</a>
+
+          <article class="card-projeto revelar">
+            <div class="card-capa capa-2" aria-hidden="true">
+              <span class="capa-codigo mono">Loja loja = new Loja();<br>loja.adicionarProduto(p);<br>loja.conferirValidade();</span>
+              <span class="card-num mono">02</span>
+              <span class="card-ano mono">2025</span>
+            </div>
+            <div class="card-corpo">
+              <h3>Gerenciador de Lojas</h3>
+              <p>Gerenciador de lojas de um shopping em Java: estoque, validade de produtos e regras de negócio como taxa de importação e meta de vendas.</p>
+              <div class="tags">
+                <span class="tag mono">Java</span><span class="tag mono">Herança</span><span class="tag mono">Arrays</span>
+              </div>
+              <div class="card-rodape">
+                <a href="https://github.com/sbuavas/store-manager" target="_blank" rel="noopener" class="card-link">Ver projeto
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="https://github.com/sbuavas/store-manager" target="_blank" rel="noopener" class="card-icone" aria-label="Repositório no GitHub"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg></a>
+              </div>
+            </div>
           </article>
-          <article class="card">
-            <h3>Esta página</h3>
-            <p>Landing page em HTML, CSS e JavaScript puro, com formulário de contato e busca de endereço pela ViaCEP.</p>
-            <a href="https://github.com/sbuavas/portfolio-landing" target="_blank" rel="noopener">Ver no GitHub</a>
+
+          <article class="card-projeto revelar">
+            <div class="card-capa capa-3" aria-hidden="true">
+              <span class="capa-codigo mono">fetch(`viacep.com.br/ws/${cep}/json/`)<br>&nbsp;&nbsp;.then(r =&gt; r.json())</span>
+              <span class="card-num mono">03</span>
+              <span class="card-ano mono">2026</span>
+            </div>
+            <div class="card-corpo">
+              <h3>Portfólio</h3>
+              <p>Este site: landing page em HTML, CSS e JavaScript puro, com tema claro e escuro, formulário de contato e busca de endereço pela ViaCEP.</p>
+              <div class="tags">
+                <span class="tag mono">HTML</span><span class="tag mono">CSS</span><span class="tag mono">JavaScript</span><span class="tag mono">ViaCEP</span>
+              </div>
+              <div class="card-rodape">
+                <a href="https://github.com/sbuavas/portfolio-landing" target="_blank" rel="noopener" class="card-link">Ver projeto
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <div class="card-icones">
+                  <a href="https://github.com/sbuavas/portfolio-landing" target="_blank" rel="noopener" class="card-icone" aria-label="Repositório no GitHub"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg></a>
+                  <a href="https://sbuavas.github.io/portfolio-landing/" target="_blank" rel="noopener" class="card-icone" aria-label="Site no ar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a>
+                </div>
+              </div>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="contato" class="secao">
-      <div class="container">
-        <h2>Contato</h2>
-        <p>Manda uma mensagem. Se informar o CEP, eu já sei de onde você fala.</p>
+    <!-- STACK -->
+    <section id="stack" class="secao borda-topo">
+      <div class="wrap">
+        <div class="secao-cabecalho revelar">
+          <span class="rotulo mono">// Stack</span>
+          <h2>Tecnologias</h2>
+          <p class="secao-desc">Ferramentas que uso no trabalho e nos estudos, do back-end à tela.</p>
+        </div>
+        <div class="stack-grupos" id="stack-grupos"></div>
+      </div>
+    </section>
 
-        <form id="form-contato" class="formulario" novalidate>
-          <div class="campo">
-            <label for="nome">Nome</label>
-            <input type="text" id="nome" name="nome" required>
+    <!-- EXPERIÊNCIA -->
+    <section id="experiencia" class="secao borda-topo">
+      <div class="wrap">
+        <div class="secao-cabecalho revelar">
+          <span class="rotulo mono">// Linha do tempo</span>
+          <h2>Experiência</h2>
+          <p class="secao-desc">Trabalho e formação, do mais recente para o mais antigo.</p>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-linha" aria-hidden="true"></div>
+
+          <article class="tl-item revelar">
+            <span class="tl-ponto atual" aria-hidden="true"></span>
+            <div class="tl-meta">
+              <span class="mono">2026 – atual</span>
+              <span class="tl-tag destaque mono">Atual</span>
+            </div>
+            <h3>Desenvolvedor de Software</h3>
+            <p class="tl-empresa">SowAi</p>
+            <ul class="tl-lista">
+              <li>Desenvolvimento de plataformas web com Python (FastAPI), PostgreSQL e Redis, do banco à API.</li>
+              <li>Integração com APIs de terceiros (anúncios, pagamentos, e-mail) e automações com filas de tarefas.</li>
+              <li>Publicação em Kubernetes com Docker, imagens versionadas e ambiente de homologação para a cliente validar.</li>
+              <li>Trabalho por entrega: cada bloco termina com algo que o cliente consegue ver e testar.</li>
+            </ul>
+          </article>
+
+          <article class="tl-item revelar">
+            <span class="tl-ponto" aria-hidden="true"></span>
+            <div class="tl-meta">
+              <span class="mono">2026</span>
+              <span class="tl-tag mono">Projetos</span>
+            </div>
+            <h3>Desenvolvimento e automação</h3>
+            <p class="tl-empresa">Exatron Indústria Eletrônica</p>
+            <ul class="tl-lista">
+              <li>Sistema interno de atendimento (helpdesk) para a equipe.</li>
+              <li>Automação de artes de embalagem com Python, Pillow e OpenCV.</li>
+            </ul>
+          </article>
+
+          <article class="tl-item revelar">
+            <span class="tl-ponto" aria-hidden="true"></span>
+            <div class="tl-meta">
+              <span class="mono">2026</span>
+              <span class="tl-tag mono">Formação</span>
+            </div>
+            <h3>Desenvolvedor Full Stack Jr.</h3>
+            <p class="tl-empresa">+praTI · Codifica Edu</p>
+            <ul class="tl-lista">
+              <li>Lógica, Java e orientação a objetos, banco de dados, HTML, CSS e JavaScript.</li>
+              <li>Atividades práticas entregues por repositório no GitHub.</li>
+            </ul>
+          </article>
+
+          <p class="tl-rotulo mono revelar">Formação acadêmica</p>
+
+          <article class="tl-item revelar">
+            <span class="tl-ponto neutro" aria-hidden="true"></span>
+            <div class="tl-meta">
+              <span class="mono">Unisinos</span>
+            </div>
+            <h3>Universidade do Vale do Rio dos Sinos</h3>
+            <p class="tl-empresa">São Leopoldo, RS</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="contato borda-topo">
+      <div class="contato-glow" aria-hidden="true"></div>
+      <div class="contato-grade grade" aria-hidden="true"></div>
+      <div class="wrap contato-inner">
+        <div class="contato-cabecalho">
+          <span class="rotulo mono revelar">// Contato</span>
+          <h2 class="revelar">Vamos construir <span class="gradiente">algo.</span></h2>
+          <p class="secao-desc revelar">Aberto a vagas e projetos. Em Canoas, RS, disponível para trabalhar remoto.</p>
+          <div class="contato-botoes revelar">
+            <a href="mailto:santiagogbuavas@gmail.com" class="btn btn-primario btn-grande">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg>
+              Mandar um e-mail
+            </a>
+            <a href="https://www.linkedin.com/in/santiago-buavas/" target="_blank" rel="noopener" class="btn btn-contorno btn-grande">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+              Conectar no LinkedIn
+            </a>
           </div>
+          <p class="mono contato-nota revelar">Ou manda uma mensagem direto por aqui.</p>
+        </div>
 
-          <div class="campo">
-            <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-
-          <div class="linha">
-            <div class="campo campo-cep">
-              <label for="cep">CEP</label>
-              <input type="text" id="cep" name="cep" maxlength="9" placeholder="00000-000" inputmode="numeric">
-              <small id="cep-status" class="ajuda"></small>
+        <form id="form-contato" class="formulario revelar" novalidate>
+          <div class="form-linha">
+            <div class="campo">
+              <label for="nome" class="mono">Nome</label>
+              <input type="text" id="nome" name="nome" required autocomplete="name">
             </div>
             <div class="campo">
-              <label for="cidade">Cidade</label>
-              <input type="text" id="cidade" name="cidade" readonly>
+              <label for="email" class="mono">E-mail</label>
+              <input type="email" id="email" name="email" required autocomplete="email">
+            </div>
+          </div>
+          <div class="form-linha form-linha-cep">
+            <div class="campo">
+              <label for="cep" class="mono">CEP <span class="opcional">(opcional)</span></label>
+              <input type="text" id="cep" name="cep" maxlength="9" placeholder="00000-000" inputmode="numeric" autocomplete="postal-code">
+              <small id="cep-status" class="ajuda mono"></small>
+            </div>
+            <div class="campo">
+              <label for="cidade" class="mono">Cidade</label>
+              <input type="text" id="cidade" name="cidade" readonly tabindex="-1">
             </div>
             <div class="campo campo-uf">
-              <label for="uf">UF</label>
-              <input type="text" id="uf" name="uf" readonly>
+              <label for="uf" class="mono">UF</label>
+              <input type="text" id="uf" name="uf" readonly tabindex="-1">
             </div>
           </div>
-
           <div class="campo">
-            <label for="mensagem">Mensagem</label>
+            <label for="mensagem" class="mono">Mensagem</label>
             <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
           </div>
-
-          <button type="submit" class="btn btn-primario">Enviar</button>
+          <button type="submit" class="btn btn-primario">Enviar mensagem
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
         </form>
-
-        <div id="agradecimento" class="agradecimento escondido"></div>
+        <div id="agradecimento" class="agradecimento escondido" role="status"></div>
       </div>
     </section>
   </main>
 
   <footer class="rodape">
-    <div class="container">
-      <p>Santiago Buavas</p>
-      <p>
-        <a href="https://github.com/sbuavas" target="_blank" rel="noopener">GitHub</a> ·
-        <a href="https://www.linkedin.com/in/santiago-buavas" target="_blank" rel="noopener">LinkedIn</a>
-      </p>
+    <div class="wrap rodape-inner">
+      <p class="mono">Santiago Buavas · 2026</p>
+      <div class="rodape-sociais">
+        <a href="https://github.com/sbuavas" target="_blank" rel="noopener" aria-label="GitHub"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg></a>
+        <a href="https://www.linkedin.com/in/santiago-buavas/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+        <a href="mailto:santiagogbuavas@gmail.com" aria-label="E-mail"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg></a>
+      </div>
     </div>
   </footer>
 
