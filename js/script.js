@@ -75,7 +75,7 @@ document.querySelectorAll('.revelar').forEach((el, i) => {
 const tecnologias = [
   ['Python', true], ['FastAPI', true], ['PostgreSQL', true], ['JavaScript', false], ['TypeScript', false],
   ['HTML', false], ['CSS', false], ['Java', true], ['SQL', false], ['Redis', false], ['Celery', false],
-  ['Docker', false], ['Kubernetes', false], ['Git', false], ['Linux', false], ['Playwright', false]
+  ['Django', false], ['Streamlit', false], ['Gemini', true], ['Pinecone', false], ['OpenCV', false], ['Docker', false], ['Git', false], ['Linux', false]
 ];
 
 function montarMarquee(id, lista) {
@@ -103,10 +103,11 @@ const icones = {
 };
 
 const grupos = [
-  { titulo: 'Back-end', itens: [['Python', 'codigo'], ['FastAPI', 'raio'], ['SQLAlchemy', 'banco'], ['Celery', 'servidor'], ['Java', 'codigo']] },
+  { titulo: 'Back-end', itens: [['Python', 'codigo'], ['Django REST', 'servidor'], ['FastAPI', 'raio'], ['Streamlit', 'tela'], ['Java', 'codigo']] },
+  { titulo: 'IA aplicada', itens: [['Gemini', 'raio'], ['RAG', 'livro'], ['Embeddings', 'codigo'], ['Pinecone', 'banco']] },
   { titulo: 'Front-end', itens: [['HTML', 'tela'], ['CSS', 'tela'], ['JavaScript', 'codigo'], ['TypeScript', 'codigo']] },
-  { titulo: 'Dados', itens: [['PostgreSQL', 'banco'], ['Redis', 'banco'], ['SQL', 'banco']] },
-  { titulo: 'Infra & ferramentas', itens: [['Docker', 'caixa'], ['Kubernetes', 'servidor'], ['Git', 'ramo'], ['Linux', 'terminal'], ['Playwright', 'tela']] },
+  { titulo: 'Dados', itens: [['PostgreSQL', 'banco'], ['MySQL', 'banco'], ['SQL', 'banco']] },
+  { titulo: 'Infra & ferramentas', itens: [['Docker', 'caixa'], ['Git', 'ramo'], ['Linux', 'terminal'], ['OpenCV', 'tela'], ['JWT', 'codigo']] },
   { titulo: 'Estudando', itens: [['Orientação a objetos', 'livro'], ['Modelagem de dados', 'livro'], ['React', 'tela']] }
 ];
 
